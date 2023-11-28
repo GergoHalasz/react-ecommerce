@@ -1,10 +1,10 @@
 import "./App.css";
-import DateCounter from "./components/DateCounter";
+import Add from "./components/Add";
 
 function App() {
   return (
     <>
-      <DateCounter></DateCounter>
+      <Add></Add>
     </>
   );
 }
