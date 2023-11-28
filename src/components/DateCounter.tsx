@@ -1,12 +1,9 @@
 import { useReducer } from "react";
-import * as React from "react";
 import { IconButton, Button } from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import Slider from "@mui/material/Slider";
 import TextField from "@mui/material/TextField";
-
-type 
 
 const initialState = { count: 0, step: 1 };
 
