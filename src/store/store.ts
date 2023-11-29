@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit/dist/configureStore";
+import { configureStore } from '@reduxjs/toolkit';
 import { PersonSlice } from "./features/personSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 

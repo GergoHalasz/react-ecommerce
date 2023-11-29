@@ -18,9 +18,9 @@ export const PersonSlice = createSlice({
   initialState,
   reducers: {
     addPerson: (state, action: PayloadAction<{ name: string }>) => {
-      state.persons.push({
+      state.persons.push({ 
         id: state.persons.length,
-        name: action.payload.name,
+        name: action.payload.name, 
       });
     },
   },
