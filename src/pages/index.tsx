@@ -1,5 +1,5 @@
-import HomeScreen from "./HomeScreen";
-import LoginScreen from "./LoginScreen";
-import EditUsersScreen from "./EditUsersScreen";
+import Home from "./HomePage/HomePage";
+import Category from "./CategoryPage/CategoryPage";
 
-export { HomeScreen, LoginScreen, EditUsersScreen };
+
+export {Home, Category};
