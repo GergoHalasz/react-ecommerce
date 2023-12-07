@@ -1,7 +1,20 @@
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchCategories } from "../../store/categorySlice";
+
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const {data: categories} = useSelector((state) => state.category);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+    
+  },[])
+
   return (
     <nav className="navbar">
       <div className="navbar-content">
@@ -34,17 +47,31 @@ const Navbar = () => {
 
         <div className="navbar-bottom bg-regal-blue">
           <div className="container flex flex-between">
-            <ul className="nav-links flex">
-              <button type="button" className="navbar-hide-btn text-white">
+            <ul
+              className={`nav-links flex ${
+                isSidebarOpen ? "show-nav-links" : ""
+              }`}
+            >
+              <button
+                type="button"
+                className="navbar-hide-btn text-white"
+                onClick={() => setIsSidebarOpen(false)}
+              >
                 <i className="fas fa-times"></i>
               </button>
 
               <li>
-                <Link to="/" className="nav-link text-white">Demos</Link>
+                <Link to="/" className="nav-link text-white">
+                  Demos
+                </Link>
               </li>
             </ul>
 
-            <button type="button" className="navbar-show-btn text-gold">
+            <button
+              type="button"
+              className="navbar-show-btn text-gold"
+              onClick={() => setIsSidebarOpen(true)}
+            >
               <i className="fas fa-bars"></i>
             </button>
           </div>
