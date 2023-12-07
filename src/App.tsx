@@ -5,22 +5,19 @@ import { Home, Category } from "./pages/index";
 // components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
 
 function App() {
   return (
     <div className="App">
-      <Provider store={store}>
         <BrowserRouter>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/category/:id" element={<Category />} />
+
           </Routes>
           <Footer />
         </BrowserRouter>
-      </Provider>
     </div>
   );
 }
